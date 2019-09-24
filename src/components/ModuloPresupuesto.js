@@ -1,19 +1,5 @@
 import React, { Component } from "react";
 import { browserHistory } from "react-router-3";
-import { Link } from "react-router-3";
-
-import {
-  MDBNavbar,
-  MDBNavbarBrand,
-  NavbarNav,
-  MDBNavItem,
-  MDBNavLink,
-  MDBNavbarToggler,
-  MDBCollapse,
-  MDBContainer
-} from "mdbreact";
-
-//import swal from "sweetalert";
 
 class TodoForm extends Component {
   constructor() {
@@ -33,16 +19,6 @@ class TodoForm extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  state = {
-    collapseID: ""
-  };
-
-  toggleCollapse = collapseID => () => {
-    this.setState(prevState => ({
-      collapseID: prevState.collapseID !== collapseID ? collapseID : ""
-    }));
-  };
 
   handleSubmit(e) {
     e.preventDefault();
@@ -74,57 +50,22 @@ class TodoForm extends Component {
     });
   }
 
-  RegistrarEgresos = e => {
-    browserHistory.push("/vista/registrarEgresos");
-    // console.log("Vista nueva");
-    e.preventDefault();
-  };
-
   RegistrarPresupuesto = e => {
+    browserHistory.push("/vista/registrarPresupuesto");
     // console.log("Vista nueva");
-    //swal("Presupuesto aperturado exitosamente!", "", "success");
-    browserHistory.push("/vista/RegistrarPresupuesto");
-    //this.RegistrarPresupuesto = this.RegistrarPresupuesto.bind(this);
     e.preventDefault();
   };
 
   ModuloPresupuesto = e => {
     browserHistory.push("/vista/moduloPresupuesto");
     // console.log("Vista nueva");
-
     e.preventDefault();
   };
 
   render() {
     return (
       <div className="text-center">
-        <MDBNavbar style={{ marginTop: "20px" }} light>
-          <MDBContainer>
-            <MDBNavbarBrand>Módulo de Presupuesto</MDBNavbarBrand>
-            <MDBNavbarToggler
-              onClick={this.toggleCollapse("navbarCollapse1")}
-            />
-            <MDBCollapse
-              id="navbarCollapse1"
-              isOpen={this.state.collapseID}
-              navbar
-            >
-              <NavbarNav className="columna">
-                <MDBNavItem active />
-                <Link onClick={this.ModuloPresupuesto} className="nav" href="">
-                  Módulo Presupuesto
-                </Link>
-                <MDBNavItem />
-                <Link onClick={this.RegistrarEgresos} className="nav" href="">
-                  Registrar Egresos{" "}
-                </Link>
-                <MDBNavItem />
-                <Link className="nav">Registrar Ingresos</Link>
-              </NavbarNav>
-            </MDBCollapse>
-          </MDBContainer>
-        </MDBNavbar>
-
+        <h2>Módulo de Presupuesto</h2>
         <hr />
         <div className="container ">
           <div className="card">

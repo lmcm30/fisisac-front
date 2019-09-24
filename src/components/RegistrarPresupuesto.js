@@ -1,19 +1,6 @@
 import React, { Component } from "react";
 import { browserHistory } from "react-router-3";
 import { TiArrowBack } from "react-icons/ti";
-import { Link } from "react-router-3";
-
-
-import {
-  MDBNavbar,
-  MDBNavbarBrand,
-  NavbarNav,
-  MDBNavItem,
-  MDBNavLink,
-  MDBNavbarToggler,
-  MDBCollapse,
-  MDBContainer
-} from "mdbreact";
 
 class TodoForm extends Component {
   RegistrarPresupuesto = e => {
@@ -33,46 +20,15 @@ class TodoForm extends Component {
     e.preventDefault();
   };
 
-  state = {
-    collapseID: ""
-  };
-
-  toggleCollapse = collapseID => () => {
-    this.setState(prevState => ({
-      collapseID: prevState.collapseID !== collapseID ? collapseID : ""
-    }));
-  };
-
   render() {
     return (
       <div className="text-center">
-        <MDBNavbar style={{ marginTop: "20px" }} light>
-          <MDBContainer>
-            <MDBNavbarBrand>Registrar Presupuesto</MDBNavbarBrand>
-            <MDBNavbarToggler
-              onClick={this.toggleCollapse("navbarCollapse1")}
-            />
-            <MDBCollapse
-              id="navbarCollapse1"
-              isOpen={this.state.collapseID}
-              navbar
-            >
-              <NavbarNav className="columna">
-                <MDBNavItem active />
-                <Link onClick={this.ModuloPresupuesto} className="nav" href="">
-                  Módulo Presupuesto
-                </Link>
-                <MDBNavItem />
-                <Link onClick={this.RegistrarEgresos} className="nav" href="">
-                  Registrar Egresos{" "}
-                </Link>
-                <MDBNavItem />
-                <Link className="nav">Registrar Ingresos</Link>
-              </NavbarNav>
-            </MDBCollapse>
-          </MDBContainer>
-        </MDBNavbar>
-
+        <h3>
+          Registrar Presupuesto
+          <button onClick={this.ModuloPresupuesto} className="return" href="">
+            Regresar <TiArrowBack />
+          </button>
+        </h3>
         <hr />
 
         <div className="container">

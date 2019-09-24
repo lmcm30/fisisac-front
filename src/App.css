@@ -13,31 +13,17 @@
   width: auto;
 }
 
-.nav {
-  background-color: #dadada;
-  margin-top: 10px;
-  padding: 5px 12px 5px 12px;
-  color: black;
-  border-radius: 5px;
-}
-
-.nav:hover {
-  text-decoration: none;
-
-  background-color: #c5c5c5;
-  color: black;
-}
-
 h3 {
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: lightblue;
   padding: 20px;
-  text-align: center;
+  text-align: right;
   font-weight: 100;
-  font-size: 20px;
+  font-size: 28px;
   width: 50%;
   margin: 0 auto;
   width: 100%;
+  font-weight: bold;
   font-family: "Exo", sans-serif;
 }
 
@@ -56,18 +42,14 @@ h2 {
 }
 
 .return {
-  background-color: rgb(235, 235, 235);
-  color: black;
-  padding: 10px 10px 10px 10px;
-  border-radius: 14px;
-  font-size: 16px;
-  margin-left: 850px;
-  border-color: white;
+  background-color: black;
+  color: lightblue;
+  font-size: 20px;
+  margin-left: 490px;
+  border-color: black;
 }
 
 .return:hover {
-  background-color: rgb(231, 228, 228);
-
   text-decoration: none;
   cursor: pointer;
 }
