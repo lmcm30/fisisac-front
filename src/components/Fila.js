@@ -7,21 +7,20 @@ class CustomRow extends React.Component {
    super();
    this.state = {
    // defaultValueOption: null,
-    programas: ['ads','addas']
+    programas: [],
   };
   }
 
 
 
-  // componentDidUpdate() {
-  //   fetch("https://registropresupuesto.herokuapp.com/programas")
-  //   .then(response => response.json())
-  //   .then(ga =>{
-  //     this.setState({ programas: ga.data })
-  //     console.log(ga)
-  //   });   
-  //     console.log('asdas');   
-  // }
+  componentDidMount() {
+    fetch("https://registropresupuesto.herokuapp.com/programas")
+    .then(response => response.json())
+    .then(ga =>{
+      this.setState({ programas: ga })
+    });   
+  
+  }
 
 
 
@@ -47,7 +46,7 @@ class CustomRow extends React.Component {
             <select className="prog" name="prog">
             {this.state.programas.map(programa => (
                 <option key={programa.id} value={programa.id}>
-                  {programa}
+                  {programa.siglaPrograma}
                 </option>
               ))}
             </select>

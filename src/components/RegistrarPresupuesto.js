@@ -20,12 +20,7 @@ class TodoForm extends Component {
     e.preventDefault();
   };
 
-  componentDidMount() {
-    fetch("https://registropresupuesto.herokuapp.com/programas")
-      .then(response => response.json())
-      .then(ga => console.log(ga));
-      
-  }
+ 
 
   render() {
     return (
