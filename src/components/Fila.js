@@ -2,9 +2,28 @@ import React from "react";
 import "../App.css";
 
 class CustomRow extends React.Component {
-  state = {
-    selectedOption: null
+  
+  constructor(){
+   super();
+   this.state = {
+   // defaultValueOption: null,
+    programas: ['ads','addas']
   };
+  }
+
+
+
+  // componentDidUpdate() {
+  //   fetch("https://registropresupuesto.herokuapp.com/programas")
+  //   .then(response => response.json())
+  //   .then(ga =>{
+  //     this.setState({ programas: ga.data })
+  //     console.log(ga)
+  //   });   
+  //     console.log('asdas');   
+  // }
+
+
 
   render() {
     return (
@@ -14,8 +33,8 @@ class CustomRow extends React.Component {
             <input type="checkbox" />
           </td>
           <td className="td">
-            <select class="clas_gast" name="clas_gast">
-              <option value="ser_div" selected>
+            <select className="clas_gast" name="clas_gast">
+              <option value="ser_div" defaultValue>
                 Servicios Diversos
               </option>
               <option value="adm_serv">
@@ -25,17 +44,17 @@ class CustomRow extends React.Component {
             </select>
           </td>
           <td className="td">
-            <select class="prog" name="prog">
-              <option value="doc" selected>
-                Doctorado
-              </option>
-              <option value="gti">Gestion de tecnologias de informacion</option>
-              <option value="isw">Ingenieria de software</option>
+            <select className="prog" name="prog">
+            {this.state.programas.map(programa => (
+                <option key={programa.id} value={programa.id}>
+                  {programa}
+                </option>
+              ))}
             </select>
           </td>
           <td className="td">
-            <select class="sem" name="sem">
-              <option value="201" selected>
+            <select className="sem" name="sem">
+              <option value="201" defaultValue>
                 2020 I
               </option>
               <option value="202">2020 II</option>
@@ -43,8 +62,8 @@ class CustomRow extends React.Component {
             </select>
           </td>
           <td className="td">
-            <select class="curso" name="curso">
-              <option value="elec" selected>
+            <select className="curso" name="curso">
+              <option value="elec" defaultValue>
                 Electivo
               </option>
               <option value="avacd">
@@ -54,8 +73,8 @@ class CustomRow extends React.Component {
             </select>
           </td>
           <td className="td">
-            <select class="uni" name="uni">
-              <option value="hora" selected>
+            <select className="uni" name="uni">
+              <option value="hora" defaultValue>
                 Hora{" "}
               </option>
               <option value="mes">Mes </option>
@@ -66,8 +85,8 @@ class CustomRow extends React.Component {
             <input className="input-cant" />
           </td>
           <td className="td">
-            <select class="grad" name="grad">
-              <option value="dr" selected>
+            <select className="grad" name="grad">
+              <option value="dr" defaultValue>
                 Dr
               </option>
               <option value="mg">Mg </option>

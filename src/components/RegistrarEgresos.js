@@ -20,6 +20,7 @@ class TodoForm extends Component {
     this.onSubmit2 = this.onSubmit2.bind(this);
     e.preventDefault();
   };
+  
 
   RegistrarEgresos = e => {
     browserHistory.push("/vista/registrarEgresos");
@@ -57,7 +58,7 @@ class TodoForm extends Component {
         </h3>
         <hr />
         <div className="first-buttons">
-          <div class="btn-group" role="group">
+          <div className="btn-group" role="group">
             <button className="btn-selec btn-primary ">
               <IoMdCheckmark className="icon" /> SELECCIONAR TODO
             </button>
@@ -79,7 +80,7 @@ class TodoForm extends Component {
         <hr />
 
         <div className="first-buttons">
-          <div class="btn-group" role="group">
+          <div className="btn-group" role="group">
             <button
               className="btn-add btn-primary "
               rel="1"
